@@ -1,0 +1,34 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    font-family: Helvetica, sans-serif, serif;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.form-grid {
+    padding: 10px;
+}
+
+#submit-btn {
+    width: 120px;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+fieldset {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
