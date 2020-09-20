@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/student.css">
     <title>Form Test</title>
+    <script type="text/javascript">
+        function validateForm() {
+            const form = document.forms["form"];
+            const stuname = form.stuname.value;
+            const stupass = form.stupass.value;
+            const stuage = form.stuage.value;
+
+            if (stuname === null || stuname === "") {
+                alert("必须填写姓名！");
+                return false;
+            }
+            if (stupass === null || stupass === "") {
+                alert("必须填写密码！");
+                return false;
+            }
+            if (stuage === null || stuage === "") {
+                alert("必须填写年龄！");
+                return false;
+            } else if (parseInt(stuage, 10) >= 90 || parseInt(stuage, 10) <= 0) {
+                alert("必须填写有效的年龄！");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
 <h1>注意：仅作为测试页面，请勿输入真实的个人信息以免泄露！</h1>
-<form action="form" method="post">
+<form name="form" action="form" method="post" onsubmit="return validateForm()">
     <fieldset>
         <div class="form-grid">
             <label for="name">姓名：</label><input type="text" id="name" name="stuname"><br>
@@ -18,7 +42,8 @@
         </div>
 
         <div class="form-grid">
-            <label for="age">年龄：</label><input type="text" id="age" name="stuage"><br>
+            <label for="age">年龄：</label><input type="text" id="age" name="stuage"
+                                               oninput="value=value.replace(/[^\d]/g, '')"><br>
         </div>
 
         <div class="form-grid">
