@@ -1,0 +1,9 @@
+{
+  "db": {
+    "db_host": "localhost",
+    "db_port": "3306",
+    "db_name": "javaweb_homework",
+    "db_username": "username",
+    "db_password": "password"
+  }
+}

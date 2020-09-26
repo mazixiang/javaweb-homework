@@ -11,7 +11,7 @@
         <servlet-name>h</servlet-name>
         <servlet-class>me.mazixiang.servlet.hello.Hello</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>h</servlet-name>
         <url-pattern>/hello</url-pattern>
@@ -25,5 +25,19 @@
     <servlet-mapping>
         <servlet-name>form</servlet-name>
         <url-pattern>/form</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>form-db</servlet-name>
+        <servlet-class>me.mazixiang.servlet.formdb.StudentServlet</servlet-class>
+        <init-param>
+            <param-name>ConfigFile</param-name>
+            <param-value>/WEB-INF/config.json</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>form-db</servlet-name>
+        <url-pattern>/form-db</url-pattern>
     </servlet-mapping>
 </web-app>
