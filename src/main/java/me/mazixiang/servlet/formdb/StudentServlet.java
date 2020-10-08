@@ -6,6 +6,7 @@ import me.mazixiang.dao.StudentDaoImpl;
 import me.mazixiang.vo.Student;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +19,8 @@ public class StudentServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        ServletConfig config = getServletConfig();
-        String configFilePath = this.getServletContext().getRealPath(config.getInitParameter("ConfigFile"));
+        ServletContext application=this.getServletContext();
+        String configFilePath = this.getServletContext().getRealPath(application.getInitParameter("ConfigFile"));
         FileReader fileReader = new FileReader(configFilePath);
         dbConfigString = fileReader.readString();
     }

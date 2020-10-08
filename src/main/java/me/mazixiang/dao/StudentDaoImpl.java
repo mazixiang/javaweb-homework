@@ -8,6 +8,8 @@ import me.mazixiang.vo.Student;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDaoImpl implements StudentDao {
@@ -69,7 +71,29 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List<Student> queryAll() {
-        return null;
+    public List<Student> queryAll() throws Exception{
+        String sql = "select id, name, password, age, gender, hobbies, school from student";
+        Connection connection = openConnection();
+        PreparedStatement pst = connection.prepareStatement(sql);
+        ResultSet resultSet = pst.executeQuery();
+        List<Student> studentList = new ArrayList<>();
+        while (resultSet.next()) {
+            Student student = new Student();
+
+            student.setStuId(resultSet.getString("id"));
+            student.setStuName(resultSet.getString("name"));
+            student.setStuPass(resultSet.getString("password"));
+            student.setStuAge(resultSet.getInt("age"));
+            student.setStuGender(resultSet.getString("gender"));
+            student.setStuHobbies(resultSet.getString("hobbies"));
+            student.setStuSchool(resultSet.getString("school"));
+
+            studentList.add(student);
+        }
+
+        resultSet.close();
+        pst.close();
+        connection.close();
+        return studentList;
     }
 }

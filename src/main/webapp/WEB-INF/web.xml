@@ -7,6 +7,11 @@
         <welcome-file>welcome.html</welcome-file>
     </welcome-file-list>
 
+    <context-param>
+        <param-name>ConfigFile</param-name>
+        <param-value>/WEB-INF/config.json</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>h</servlet-name>
         <servlet-class>me.mazixiang.servlet.hello.Hello</servlet-class>
@@ -30,14 +35,20 @@
     <servlet>
         <servlet-name>form-db</servlet-name>
         <servlet-class>me.mazixiang.servlet.formdb.StudentServlet</servlet-class>
-        <init-param>
-            <param-name>ConfigFile</param-name>
-            <param-value>/WEB-INF/config.json</param-value>
-        </init-param>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>form-db</servlet-name>
         <url-pattern>/form-db</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>queryAll</servlet-name>
+        <servlet-class>me.mazixiang.servlet.queryall.QueryAllServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>queryAll</servlet-name>
+        <url-pattern>/queryAll</url-pattern>
     </servlet-mapping>
 </web-app>
