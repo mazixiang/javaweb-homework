@@ -108,3 +108,10 @@ fabric.properties
 # Target folder
 
 target/*
+
+# Smart tomcat configuration folder
+
+.run
+
+# Config file
+src/main/webapp/WEB-INF/config.json
