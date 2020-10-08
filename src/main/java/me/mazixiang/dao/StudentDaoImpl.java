@@ -56,8 +56,13 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public void delete(Student student) {
+    public void delete(Student student) throws Exception {
+        String sql = "delete from student where id=?";
+        Connection connection = openConnection();
+        PreparedStatement pst = connection.prepareStatement(sql);
+        pst.setString(1, student.getStuId());
 
+        pst.executeUpdate();
     }
 
     @Override

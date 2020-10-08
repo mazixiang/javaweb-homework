@@ -51,4 +51,14 @@
         <servlet-name>queryAll</servlet-name>
         <url-pattern>/queryAll</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteStudent</servlet-name>
+        <servlet-class>me.mazixiang.servlet.delete.DeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteStudent</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
 </web-app>

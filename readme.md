@@ -4,6 +4,10 @@
 
 demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)
 
+## 2020.10.8
+
+添加删除学生信息的功能
+
 ## 2020.10.2
 
 通过访问 `queryAll` 查询并输出所有学生信息

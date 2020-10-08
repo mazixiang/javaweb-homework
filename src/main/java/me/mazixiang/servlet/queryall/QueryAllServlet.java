@@ -62,7 +62,7 @@ public class QueryAllServlet extends HttpServlet {
                                 "<td>" + student.getStuGender() + "</td>" +
                                 "<td>" + student.getStuHobbies() + "</td>" +
                                 "<td>" + student.getStuSchool() + "</td>" +
-                                "<td><a href=\"#\">修改</a> <a href=\"#\">删除</a></td>" +
+                                "<td><a href=\"#\">修改</a> <a href=\"delete?stuid=" + student.getStuId() + "\">删除</a></td>" +
                                 "</tr>");
             }
 
