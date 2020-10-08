@@ -10,31 +10,17 @@ public class StudentServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        System.out.println("Request Received!");
         String stuname = req.getParameter("stuname");
-        System.out.println(stuname);
 
         String stupass = req.getParameter("stupass");
-        System.out.println(stupass);
 
         String stuage = req.getParameter("stuage");
-        int age = stuage.equals("") ? 0 : Integer.parseInt(stuage);
-        System.out.println(age);
 
         String stugender = req.getParameter("stugender");
-        System.out.println(stugender);
 
         String[] hobbies = req.getParameterValues("stuhobbies");
-        if (hobbies != null && hobbies.length > 0) {
-            for (String i : hobbies) {
-                System.out.println("hobby: " + i);
-            }
-        } else {
-            System.out.println("no hobbies selected");
-        }
 
         String stuschool = req.getParameter("stuschool");
-        System.out.println(stuschool);
 
         StringBuilder text = new StringBuilder();
 
