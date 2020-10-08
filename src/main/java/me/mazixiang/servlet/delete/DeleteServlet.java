@@ -17,11 +17,12 @@ public class DeleteServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        ServletContext application=this.getServletContext();
+        ServletContext application = this.getServletContext();
         String configFilePath = this.getServletContext().getRealPath(application.getInitParameter("ConfigFile"));
         FileReader fileReader = new FileReader(configFilePath);
         dbConfigString = fileReader.readString();
     }
+
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
         String id = req.getParameter("stuid");
