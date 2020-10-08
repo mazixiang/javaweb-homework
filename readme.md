@@ -2,7 +2,7 @@
 
 存放老师课堂上布置的作业的源代码，会根据作业提交新的源代码
 
-demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)
+server 分支的 demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)，删除了数据库相关操作
 
 ## 2020.10.8
 
