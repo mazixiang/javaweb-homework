@@ -37,14 +37,14 @@ public class StudentServlet extends HttpServlet {
         student.setStuAge(Integer.parseInt(req.getParameter("stuage")));
 
         String[] hobbies = req.getParameterValues("stuhobbies");
-        String hobbiesString = "";
+        StringBuilder hobbiesString = new StringBuilder();
         for (int i = 0; i < hobbies.length; i++) {
             if (i != 0) {
-                hobbiesString += "，";
+                hobbiesString.append("，");
             }
-            hobbiesString += hobbies[i];
+            hobbiesString.append(hobbies[i]);
         }
-        student.setStuHobbies(hobbiesString);
+        student.setStuHobbies(hobbiesString.toString());
         student.setStuSchool(req.getParameter("stuschool"));
 
 
