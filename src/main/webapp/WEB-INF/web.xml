@@ -40,6 +40,7 @@
     <servlet-mapping>
         <servlet-name>form-db</servlet-name>
         <url-pattern>/form-db</url-pattern>
+        <url-pattern>/update</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -60,5 +61,15 @@
     <servlet-mapping>
         <servlet-name>deleteStudent</servlet-name>
         <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>modifyStudent</servlet-name>
+        <servlet-class>me.mazixiang.servlet.modify.ModifyShowServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>modifyStudent</servlet-name>
+        <url-pattern>/modify</url-pattern>
     </servlet-mapping>
 </web-app>

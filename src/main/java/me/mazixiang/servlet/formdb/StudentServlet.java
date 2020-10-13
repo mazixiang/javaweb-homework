@@ -19,7 +19,7 @@ public class StudentServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        ServletContext application=this.getServletContext();
+        ServletContext application = this.getServletContext();
         String configFilePath = this.getServletContext().getRealPath(application.getInitParameter("ConfigFile"));
         FileReader fileReader = new FileReader(configFilePath);
         dbConfigString = fileReader.readString();
@@ -30,6 +30,7 @@ public class StudentServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         Student student = new Student();
 
+        student.setStuId(req.getParameter("stuid"));
         student.setStuName(req.getParameter("stuname"));
         student.setStuPass(req.getParameter("stupass"));
         student.setStuGender(req.getParameter("stugender"));
@@ -53,8 +54,15 @@ public class StudentServlet extends HttpServlet {
         resp.setHeader("content-type", "text/html;charset=UTF-8");
         resp.setCharacterEncoding("UTF-8");
         try {
-            studentDao.insert(student);
-            resp.getWriter().println("添加成功");
+            if (student.getStuId() == null ||
+                    student.getStuId().length() == 0 ||
+                    student.getStuId().trim().length() == 0) {
+                studentDao.insert(student);
+                resp.getWriter().println("添加成功");
+            } else {
+                studentDao.update(student);
+                resp.getWriter().println("更新成功");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

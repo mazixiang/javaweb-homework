@@ -66,17 +66,51 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public void update(Student student) {
+    public void update(Student student) throws Exception {
+        String sql = "update student set name=?, password=?, age=?, gender=?, hobbies=?, school=?" +
+                "where id=?";
+        Connection connection = openConnection();
+        PreparedStatement pst = connection.prepareStatement(sql);
+        pst.setString(1, student.getStuName());
+        pst.setString(2, student.getStuPass());
+        pst.setInt(3, student.getStuAge());
+        pst.setString(4, student.getStuGender());
+        pst.setString(5, student.getStuHobbies());
+        pst.setString(6, student.getStuSchool());
+        pst.setString(7, student.getStuId());
 
+        pst.executeUpdate();
     }
 
     @Override
-    public Student queryById(String id) {
-        return null;
+    public Student queryById(String id) throws Exception {
+        String sql = "select id, name, password, age, gender, hobbies, school from student " +
+                "where id=?";
+        Connection connection = openConnection();
+        PreparedStatement pst = connection.prepareStatement(sql);
+        pst.setString(1, id);
+        ResultSet resultSet = pst.executeQuery();
+        Student student = null;
+        while (resultSet.next()) {
+            student = new Student();
+
+            student.setStuId(resultSet.getString("id"));
+            student.setStuName(resultSet.getString("name"));
+            student.setStuPass(resultSet.getString("password"));
+            student.setStuAge(resultSet.getInt("age"));
+            student.setStuGender(resultSet.getString("gender"));
+            student.setStuHobbies(resultSet.getString("hobbies"));
+            student.setStuSchool(resultSet.getString("school"));
+        }
+
+        resultSet.close();
+        pst.close();
+        connection.close();
+        return student;
     }
 
     @Override
-    public List<Student> queryAll() throws Exception{
+    public List<Student> queryAll() throws Exception {
         String sql = "select id, name, password, age, gender, hobbies, school from student";
         Connection connection = openConnection();
         PreparedStatement pst = connection.prepareStatement(sql);
