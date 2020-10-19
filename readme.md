@@ -1,6 +1,6 @@
-# javaweb-homework
+# javaweb-practice
 
-存放老师课堂上布置的作业的源代码，会根据作业提交新的源代码
+存放老师课堂内容的**同步练习**
 
 server 分支的 demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)，删除了数据库相关操作
 
