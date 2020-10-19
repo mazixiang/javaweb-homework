@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.mazixiang</groupId>
-    <artifactId>javaweb-homework</artifactId>
-    <version>0.1</version>
-    <name>javaweb-homework</name>
+    <artifactId>javaweb-practice</artifactId>
+    <version>0.2</version>
+    <name>javaweb-practice</name>
     <packaging>war</packaging>
 
     <properties>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.4.3</version>
+            <version>5.4.5</version>
         </dependency>
     </dependencies>
 
