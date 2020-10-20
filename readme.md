@@ -4,6 +4,16 @@
 
 server 分支的 demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)，删除了数据库相关操作
 
+## 2020.10.20
+
+添加 Servlet 交互方式，删除学生信息后，自动跳转回 `listAll`
+
+分离了显示所有学生信息的 Servlet：
+
+视图对应的 Servlet 类：[`src/main/java/me/mazixiang/servlet/queryall/ListAllServlet.java`](src/main/java/me/mazixiang/servlet/queryall/ListAllServlet.java)
+
+数据库操作对应的 Servlet 类：[`src/main/java/me/mazixiang/servlet/queryall/QueryAllServlet.java`](src/main/java/me/mazixiang/servlet/queryall/QueryAllServlet.java)
+
 ## 2020.10.13
 
 添加修改学生信息的功能：在 `/queryAll` 页面对应的学生信息后面点击修改

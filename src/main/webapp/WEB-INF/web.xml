@@ -72,4 +72,14 @@
         <servlet-name>modifyStudent</servlet-name>
         <url-pattern>/modify</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>listAll</servlet-name>
+        <servlet-class>me.mazixiang.servlet.queryall.ListAllServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>listAll</servlet-name>
+        <url-pattern>/listAll</url-pattern>
+    </servlet-mapping>
 </web-app>

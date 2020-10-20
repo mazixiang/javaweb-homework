@@ -29,6 +29,7 @@ public class DeleteServlet extends HttpServlet {
         StudentDao studentDao = new StudentDaoImpl(dbConfigString);
         Student student = new Student();
         student.setStuId(id);
+        resp.setCharacterEncoding("utf-8");
         try {
             studentDao.delete(student);
             resp.getWriter().println("delete complete");
@@ -36,5 +37,9 @@ public class DeleteServlet extends HttpServlet {
             resp.getWriter().println("delete failed");
             e.printStackTrace();
         }
+        // forward 方式跳转
+        // req.getRequestDispatcher("/queryAll").forward(req, resp);
+        // redirect 方式
+        resp.sendRedirect("queryAll");
     }
 }
