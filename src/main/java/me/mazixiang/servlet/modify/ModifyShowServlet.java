@@ -30,7 +30,7 @@ public class ModifyShowServlet extends HttpServlet {
     }
 
     @Override
-    public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String stuid = req.getParameter("stuid");
 
         StudentDao dao = new StudentDaoImpl(dbConfigString);

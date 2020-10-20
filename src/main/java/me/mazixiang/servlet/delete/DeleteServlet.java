@@ -7,9 +7,9 @@ import me.mazixiang.vo.Student;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class DeleteServlet extends HttpServlet {
@@ -24,16 +24,16 @@ public class DeleteServlet extends HttpServlet {
     }
 
     @Override
-    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("stuid");
         StudentDao studentDao = new StudentDaoImpl(dbConfigString);
         Student student = new Student();
         student.setStuId(id);
         try {
             studentDao.delete(student);
-            res.getWriter().println("delete complete");
+            resp.getWriter().println("delete complete");
         } catch (Exception e) {
-            res.getWriter().println("delete failed");
+            resp.getWriter().println("delete failed");
             e.printStackTrace();
         }
     }
