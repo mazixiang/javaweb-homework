@@ -4,6 +4,12 @@
 
 server 分支的 demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)，删除了数据库相关操作
 
+## 2020.11.4
+
+添加了新的 JSP 页面来渲染表格
+
+JSP页面：[`src/main/webapp/listAllJSP.jsp`](src/main/webapp/listAllJSP.jsp)
+
 ## 2020.10.20
 
 添加 Servlet 交互方式，删除学生信息后，自动跳转回 `listAll`
