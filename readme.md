@@ -8,7 +8,7 @@ server 分支的 demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)，�
 
 添加了新的 JSP 页面来渲染表格
 
-JSP页面：[`src/main/webapp/listAllJSP.jsp`](src/main/webapp/listAllJSP.jsp)
+JSP 页面：[`src/main/webapp/listAllJSP.jsp`](src/main/webapp/listAllJSP.jsp)
 
 ## 2020.10.20
 
