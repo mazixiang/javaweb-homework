@@ -115,3 +115,5 @@ target/*
 
 # Config file
 src/main/webapp/WEB-INF/config.json
+
+src/main/webapp/uploadFiles/*

@@ -4,6 +4,18 @@
 
 server 分支的 demo 在 [mazixiang.me/tomcat](https://mazixiang.me/tomcat)，删除了数据库相关操作
 
+## 2020.11.11
+
+添加文件上传的方式
+
+对应的 Servlet：[`src/main/java/me/mazixiang/servlet/file/FileServlet`](src/main/java/me/mazixiang/servlet/file/FileServlet.java)
+
+由于新建了文件表，需要在数据库中新建 file 表，有如下字段
+
+- id：文件的唯一 id
+- originalFileName：原始的文件名
+- filePath：在服务器上文件的存储路径
+
 ## 2020.11.4
 
 添加了新的 JSP 页面来渲染表格
