@@ -2,8 +2,8 @@ package me.mazixiang.servlet.modify;
 
 import cn.hutool.core.io.file.FileReader;
 
-import me.mazixiang.dao.StudentDao;
-import me.mazixiang.dao.StudentDaoImpl;
+import me.mazixiang.dao.student.StudentDao;
+import me.mazixiang.dao.student.StudentDaoImpl;
 import me.mazixiang.vo.Student;
 
 import javax.servlet.ServletContext;
@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ModifyShowServlet extends HttpServlet {

@@ -1,4 +1,4 @@
-package me.mazixiang.dao;
+package me.mazixiang.dao.student;
 
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.json.JSONObject;

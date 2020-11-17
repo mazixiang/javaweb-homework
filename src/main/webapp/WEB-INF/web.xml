@@ -85,7 +85,7 @@
 
     <servlet>
         <servlet-name>fileServlet</servlet-name>
-        <servlet-class>me.mazixiang.servlet.file.FileServlet</servlet-class>
+        <servlet-class>me.mazixiang.servlet.file.UploadServlet</servlet-class>
         <init-param>
             <param-name>uploadRoot</param-name>
             <param-value>uploadFiles</param-value>
@@ -100,5 +100,35 @@
     <servlet-mapping>
         <servlet-name>fileServlet</servlet-name>
         <url-pattern>/file</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>downloadServlet</servlet-name>
+        <servlet-class>me.mazixiang.servlet.file.DownloadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>downloadServlet</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>queryAllFiles</servlet-name>
+        <servlet-class>me.mazixiang.servlet.file.QueryAllFilesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>queryAllFiles</servlet-name>
+        <url-pattern>/queryAllFiles</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>exportStudents</servlet-name>
+        <servlet-class>me.mazixiang.servlet.export.ExportServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>exportStudents</servlet-name>
+        <url-pattern>/export</url-pattern>
     </servlet-mapping>
 </web-app>

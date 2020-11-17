@@ -115,5 +115,7 @@
         </tr>
     </c:forEach>
 </table>
+
+<a href="export">Export</a>
 </body>
 </html>

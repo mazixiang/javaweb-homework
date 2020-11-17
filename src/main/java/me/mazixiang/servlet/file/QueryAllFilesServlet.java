@@ -1,9 +1,9 @@
-package me.mazixiang.servlet.delete;
+package me.mazixiang.servlet.file;
 
 import cn.hutool.core.io.file.FileReader;
-import me.mazixiang.dao.student.StudentDao;
-import me.mazixiang.dao.student.StudentDaoImpl;
-import me.mazixiang.vo.Student;
+import me.mazixiang.dao.file.FileDao;
+import me.mazixiang.dao.file.FileDaoImpl;
+import me.mazixiang.vo.FileModel;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-public class DeleteServlet extends HttpServlet {
+public class QueryAllFilesServlet extends HttpServlet {
     private String dbConfigString;
 
     @Override
@@ -25,21 +26,12 @@ public class DeleteServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("stuid");
-        StudentDao studentDao = new StudentDaoImpl(dbConfigString);
-        Student student = new Student();
-        student.setStuId(id);
-        resp.setCharacterEncoding("utf-8");
+        FileDao fileDao = new FileDaoImpl(dbConfigString);
         try {
-            studentDao.delete(student);
-            resp.getWriter().println("delete complete");
+            List<FileModel> fileModelList = fileDao.queryAllFiles();
+            req.setAttribute("fileModelList", fileModelList);
         } catch (Exception e) {
-            resp.getWriter().println("delete failed");
             e.printStackTrace();
         }
-        // forward 方式跳转
-        // req.getRequestDispatcher("/queryAll").forward(req, resp);
-        // redirect 方式
-        resp.sendRedirect("queryAll");
     }
 }

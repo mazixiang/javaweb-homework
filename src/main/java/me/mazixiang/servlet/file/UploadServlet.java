@@ -2,8 +2,9 @@ package me.mazixiang.servlet.file;
 
 import cn.hutool.core.io.file.FileReader;
 import cn.hutool.core.util.IdUtil;
-import me.mazixiang.dao.FileDao;
-import me.mazixiang.dao.FileDaoImpl;
+import me.mazixiang.dao.file.FileDao;
+import me.mazixiang.dao.file.FileDaoImpl;
+import me.mazixiang.vo.FileModel;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -15,7 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class FileServlet extends HttpServlet {
+public class UploadServlet extends HttpServlet {
 
     private String dbConfigString;
     private String uploadRoot;
@@ -55,7 +56,11 @@ public class FileServlet extends HttpServlet {
         FileDao fileDao = new FileDaoImpl(dbConfigString);
 
         try {
-            fileDao.insert(fileId, fileName, filePath);
+            FileModel fileModel = new FileModel();
+            fileModel.setId(fileId);
+            fileModel.setOriginalFileName(fileName);
+            fileModel.setFilePath(filePath);
+            fileDao.insert(fileModel);
             System.out.println("insert record complete");
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,5 +77,7 @@ public class FileServlet extends HttpServlet {
 
         in.close();
         out.close();
+
+        resp.sendRedirect("listFiles.jsp");
     }
 }

@@ -1,11 +1,10 @@
 package me.mazixiang.servlet.formdb;
 
 import cn.hutool.core.io.file.FileReader;
-import me.mazixiang.dao.StudentDao;
-import me.mazixiang.dao.StudentDaoImpl;
+import me.mazixiang.dao.student.StudentDao;
+import me.mazixiang.dao.student.StudentDaoImpl;
 import me.mazixiang.vo.Student;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

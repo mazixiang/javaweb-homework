@@ -1,4 +1,4 @@
-package me.mazixiang.dao;
+package me.mazixiang.dao.student;
 
 import me.mazixiang.vo.Student;
 

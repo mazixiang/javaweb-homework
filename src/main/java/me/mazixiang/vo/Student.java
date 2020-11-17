@@ -64,4 +64,14 @@ public class Student {
     public void setStuSchool(String stuSchool) {
         this.stuSchool = stuSchool;
     }
+
+    public String toCsvString() {
+        return this.getStuId() + ","
+                + this.getStuName() + ","
+                + this.getStuPass() + ","
+                + this.getStuAge() + ","
+                + this.getStuGender() + ","
+                + this.getStuHobbies() + ","
+                + this.getStuSchool();
+    }
 }
